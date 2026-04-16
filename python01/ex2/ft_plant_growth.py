@@ -1,24 +1,24 @@
 #!/usr/bin/python3.10
 
 class Plant:
-    def __init__(self, name: str, height: float, years: int):
+    def __init__(self, name: str, height: int, years: int):
         self.name = name
-        self.height = height
+        self.height = float(height)
         self.years = years
 
     def show(self) -> None:
         print(f"{self.name.capitalize()}: {round(self.height, 1)}cm, "
               f"{self.years} days old")
-    
+
     def growth(self) -> None:
         self.height += 0.8
-    
+
     def age(self) -> None:
         self.years += 1
-        
+
 
 def main() -> None:
-    f1 = Plant("rose", 25.0, 30)
+    f1 = Plant("rose", 25, 30)
     i_height = f1.height
 
     print("=== Garden Plant Growth ===")

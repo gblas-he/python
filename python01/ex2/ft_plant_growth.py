@@ -1,13 +1,13 @@
 #!/usr/bin/python3.10
 
 class Plant:
-    def __init__(self, name: str, height: int, years: int):
+    def __init__(self, name: str, height: float, years: int):
         self.name = name
         self.height = height
         self.years = years
 
     def show(self) -> None:
-        print(f"{self.name.capitalize()}: {self.height}cm, "
+        print(f"{self.name.capitalize()}: {round(self.height, 1)}cm, "
               f"{self.years} days old")
     
     def growth(self) -> None:
@@ -18,19 +18,17 @@ class Plant:
         
 
 def main() -> None:
-    f1 = Plant("rose", 25, 30)
-    # f2 = Plant("sunflower", 80, 45)
-    # f3 = Plant("cactus", 15, 120)
-    # i_height = f1.height
+    f1 = Plant("rose", 25.0, 30)
+    i_height = f1.height
 
     print("=== Garden Plant Growth ===")
-    for n in range(7):
-        print(f"=== Day{n} ===")
-        f1.show()
+    f1.show()
+    for n in range(1, 8):
+        print(f"=== Day {n} ===")
         f1.growth()
         f1.age()
-    # f_height -= i_height
-    # print(f"Growth this week: {f_height}cm")
+        f1.show()
+    print(f"Growth this week: {round(f1.height - i_height, 2)}")
 
 
 if __name__ == "__main__":

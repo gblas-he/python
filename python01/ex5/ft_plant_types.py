@@ -40,6 +40,12 @@ class Plant:
             self._ages = ages
             print(f"Age updated: {ages} days")
 
+    def growth(self) -> None:
+        self.height += 0.8
+
+    def age(self) -> None:
+        self.ages += 1
+
 
 def main() -> None:
     print("=== Garden Security System ===")

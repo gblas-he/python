@@ -1,20 +1,20 @@
 #!/usr/bin/python3.10
 
 class Plant:
-    def __init__(self, name: str, height: int, years: int):
+    def __init__(self, name: str, height: int, ages: int):
         self.name = name
         self.height = float(height)
-        self.years = years
+        self.ages = ages
 
     def show(self) -> str:
         return (f"{self.name.capitalize()}: {round(self.height, 1)}cm, "
-                f"{self.years} days old")
+                f"{self.ages} days old")
 
     def growth(self) -> None:
         self.height += 0.8
 
     def age(self) -> None:
-        self.years += 1
+        self.ages += 1
 
 
 def main() -> None:

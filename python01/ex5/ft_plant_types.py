@@ -46,12 +46,19 @@ class Plant:
     def age(self) -> None:
         self.ages += 1
 
+
 class Flower(Plant):
     def __init__(self, name: str, height: int, ages: int, color: str):
         super().__init__(name, height, ages)
         self.color = color
+        self.is_bloomed = False
     
-    def bloom(self):
+    def bloom(self) -> None:
+        self.is_bloomed = True
+        super().show()
+        print()
+
+
         
 
 

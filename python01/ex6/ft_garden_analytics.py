@@ -107,8 +107,8 @@ class Tree(Plant):
             self.shade = 0
 
         def show_stats(self) -> None:
-            print(super().show_stats())
-            return (f"{self.shade} shade")
+            return(f"{super().show_stats()}\n "
+                  f"{self.shade} shade")
 
 
 class Vegetable(Plant):
@@ -140,6 +140,11 @@ class Seed(Flower):
     def show(self):
         print(super().show())
         print(f"Seeds: {self.seeds}")
+
+
+def display_stats(p1: Plant):
+    print(f"[statistics for {p1.name}]\n"
+          f"{p1.stats.show_stats()}")
 
 
 def main():

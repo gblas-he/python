@@ -107,8 +107,8 @@ class Tree(Plant):
             self.shade = 0
 
         def show_stats(self) -> None:
-            print(super().show_stats())
-            return (f"{self.shade} shade")
+            return(f"{super().show_stats()}\n "
+                  f"{self.shade} shade")
 
 
 class Vegetable(Plant):
@@ -142,7 +142,12 @@ class Seed(Flower):
         print(f"Seeds: {self.seeds}")
 
 
-oak = Tree("oak", 200, 365, 5.0)
-oak.show()
-oak.produce_shade()
-print(oak.stats.show_stats())
+def display_stats(p1: Plant):
+    print(f"[statistics for {p1.name}]\n"
+          f"{p1.stats.show_stats()}")
+
+
+rose = Flower("rose", 15, 10, "red")
+rose.show()
+display_stats(rose)
+

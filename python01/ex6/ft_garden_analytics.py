@@ -35,7 +35,8 @@ class Plant:
             self._show = 0
 
         def display(self):
-            return f"Stats: {self._grow} grow, {self._age} age, {self._show} show"
+            return (f"Stats: {self._grow} grow, {self._age} age, "
+                    f"{self._show} show")
 
 
 class Flower(Plant):

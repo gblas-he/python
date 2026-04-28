@@ -52,7 +52,7 @@ class Flower(Plant):
         super().__init__(name, height, ages)
         self.color = color
         self.is_bloomed = False
-    
+
     def bloom(self) -> None:
         self.is_bloomed = True
 
@@ -63,6 +63,7 @@ class Flower(Plant):
             print(f"{self.name} is blooming beautifully!")
         else:
             print(f"{self.name} has not bloomed yet")
+
 
 class Tree(Plant):
     def __init__(self, name, height, age, trunk_diameter):
@@ -76,6 +77,7 @@ class Tree(Plant):
     def show(self):
         print(super().show())
         print(f"Trunk diameter: {self.trunk_diameter}cm")
+
 
 class Vegetable(Plant):
     def __init__(self, name, height, age, harvest_season):
@@ -95,6 +97,7 @@ class Vegetable(Plant):
         print(super().show())
         print(f"Harvest season: {self.harvest_season}")
         print(f"Nutritional value: {self.nutritional_value}")
+
 
 def main():
     print("=== Garden Plant Types ===")

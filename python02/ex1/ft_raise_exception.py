@@ -2,11 +2,19 @@
 
 def input_temperature(tem_str: str) -> int:
     tem_num = int(tem_str)
+    if (tem_num <= 0):
+        raise Exception(f"Caught input_temperature error: {tem_num}°C "
+                        f"is too cold for plants (min {tem_num}°C)")
+    elif (tem_num >= 40):
+        raise Exception(f"Caught input_temperature error: {tem_num}°C "
+                        f"is too hot for plants (min {tem_num}°C)")
+
+
+
     if (tem_num >= 0 and tem_num <= 40):
-        try:
-            return tem_num
-        except Exception as e:
-            print(f"Caught input_temperature error: {e}")
+        return tem_num
+    raise Exception(f"Caught input_temperature error: {tem_num}°C is too cold "
+                    f"for plants (min {tem_num}°C)")
 
 
 def test_temperature() -> None:
@@ -16,9 +24,11 @@ def test_temperature() -> None:
             tem = input_temperature(value)
             print(f"Input data is '{value}'")
             print(f"Temperature is now {tem}ºC")
-        except ValueError as e:
+        except ValueError as v:
             print(f"Input data is '{value}'")
-            print(f"Caught input_temperature error: {e}")
+            print(f"Caught input_temperature error: {v}")
+        except Exception as e:
+            print(f"{e}")
 
 
 def main() -> None:

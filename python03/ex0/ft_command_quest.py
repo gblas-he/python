@@ -1,13 +1,12 @@
 #!/usr/bin/python3.10
-
-def input_temperature(tem_str: str) -> int:
-    return int(tem_str)
+import sys
 
 
 def main() -> None:
-    print("=== Garden Temperature ===\n")
-    test_temperature()
-    print("All tests completed - program didn't crash!")
+    print("=== Command Quest ===\n")
+    print("Program name:", sys.argv[0])
+    print("Program name:", sys.argv[0])
+    print("Program name:", sys.argv[0])
 
 
 if __name__ == "__main__":

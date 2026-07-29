@@ -10,16 +10,19 @@ def gen_player_achievements(ach: list) -> set:
 
 def main() -> None:
     print("=== Achievement Tracker System ===\n")
+    
     ACHIEVEMENT_POOL = ['Crafting Genius', 'Strategist', 'World Savior',
                         'Speed Runner', 'Survivor', 'Master Explorer',
                         'Treasure Hunter', 'Unstoppable', 'First Steps',
                         'Collector Supreme', 'Untouchable', 'Sharp Mind',
                         'Boss Slayer']
+    
     p1 = gen_player_achievements(ACHIEVEMENT_POOL)
     p2 = gen_player_achievements(ACHIEVEMENT_POOL)
     p3 = gen_player_achievements(ACHIEVEMENT_POOL)
     p4 = gen_player_achievements(ACHIEVEMENT_POOL)
     ach_set = set(ACHIEVEMENT_POOL)
+
     print(f"Player Alice: {p1}")
     print(f"Player Bob: {p2}")
     print(f"Player Charlie: {p3}")

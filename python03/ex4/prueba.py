@@ -1,2 +1,4 @@
-a = {1, 2, 2, 3, 3, 3}
-print(a)
+texto = "manzana:5"
+partes = texto.split(":")
+print(partes)          # ['manzana', '5']
+print(len(partes))     # 2

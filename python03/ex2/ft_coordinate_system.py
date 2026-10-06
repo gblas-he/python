@@ -1,47 +1,44 @@
-#!/usr/bin/python3.10
 import math
 
 
 def get_player_pos() -> tuple[float, float, float]:
     while True:
-        raw = input("Enter new coordinates as float in format "
-                    "'x, y, z': ")  # Obtemos un string
-        c = raw.split(",")
-        # el string se vuelve tipo list, con elementos string, con split
-        if len(c) != 3:
+        raw: str = input("Enter new coordinates as floats "
+                         "in format 'x,y,z': ")
+        parts: list[str] = raw.split(",")
+        try:
+            x_str, y_str, z_str = parts
+        except ValueError:
             print("Invalid syntax")
             continue
-        error = False
-        float_c = []
-        for i in c:
-            # float() no sabe convertir una lista es necesario un bucle
+        coords: list[float] = []
+        valid: bool = True
+        for part in (x_str, y_str, z_str):
             try:
-                float_c.append(float(i))
-            # Convertimos cada elemento en float y lo introducimos en la lista
+                coords.append(float(part))
             except ValueError as e:
-                print(f"Error on parameter '{i}': {e}")
-                error = True
-        if error:
-            continue
-        return (float_c[0], float_c[1], float_c[2])
+                print(f"Error on parameter '{part}': {e}")
+                valid = False
+                break
+        if valid:
+            return (coords[0], coords[1], coords[2])
 
 
 def main() -> None:
     print("=== Game Coordinate System ===\n")
     print("Get a first set of coordinates")
-    tupla_c1 = get_player_pos()
-    print(f"Got a first tuple: {tupla_c1}")
-    print(f"It includes: X={tupla_c1[0]}, Y={tupla_c1[1]}, "
-          f"Z={tupla_c1[2]}")
-    center = math.sqrt((tupla_c1[0]**2) + (tupla_c1[1]**2)
-                       + (tupla_c1[2]**2))
+    first: tuple[float, float, float] = get_player_pos()
+    print(f"Got a first tuple: {first}")
+    print(f"It includes: X={first[0]}, Y={first[1]}, Z={first[2]}")
+    center: float = math.sqrt(first[0]**2 + first[1]**2 + first[2]**2)
     print(f"Distance to center: {round(center, 4)}\n")
     print("Get a second set of coordinates")
-    tupla_c2 = get_player_pos()
-    distance = math.sqrt((tupla_c1[0] - tupla_c2[0])**2
-                         + (tupla_c1[1] - tupla_c2[1])**2
-                         + (tupla_c1[2] - tupla_c2[2])**2)
-    print(f"Distance between the 2 sets of coordinates: {round(distance, 4)}")
+    second: tuple[float, float, float] = get_player_pos()
+    distance: float = math.sqrt((second[0] - first[0])**2
+                                + (second[1] - first[1])**2
+                                + (second[2] - first[2])**2)
+    print(f"Distance between the 2 sets of coordinates: "
+          f"{round(distance, 4)}")
 
 
 if __name__ == "__main__":

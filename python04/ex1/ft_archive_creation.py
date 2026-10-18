@@ -66,7 +66,11 @@ def main() -> None:
     print("---\n")
     print(new_content)
     print("---")
-    new_name: str = input("Enter new file name (or empty): ")
+    try:
+        new_name: str = input("Enter new file name (or empty): ")
+    except EOFError:
+        new_name = ""
+        print()
     if new_name == "":
         print("Not saving data.")
     else:

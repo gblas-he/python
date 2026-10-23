@@ -1,0 +1,14 @@
+[project]
+name = "ex0"
+version = "0.1.0"
+description = "The Sealed Laboratory"
+authors = [
+    {name = "gblas-he",email = "gblas-he@student.42madrid.com"}
+]
+requires-python = ">=3.12"
+dependencies = [
+    "pandas>=2.1",
+    "numpy>=1.25",
+]
+[tool.poetry]
+package-mode = false

@@ -1,8 +1,4 @@
-.venv/
-.vscode/
-prueba.py
-.mypy_cache/
+.venv
+.env
 __pycache__/
 *.pyc
-lab_env
-.env

@@ -1,7 +1,7 @@
-.venv/
+.venv
 .vscode/
-prueba.py
-.mypy_cache/
-__pycache__/
+__pycache__
 *.pyc
-lab_env
+.mypy_cache
+.env
+poetry.lock

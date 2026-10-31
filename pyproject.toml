@@ -1,0 +1,22 @@
+[project]
+name = "python"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "gblas-he",email = "gblas-he@student.42madrid.com"}
+]
+requires-python = ">=3.12"
+dependencies = [
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+exclude = [
+    'test\.py$',
+    '^python02/ex2/ft_different_errors\.py$',
+    '^python05/ex2/ft_alembic_1\.py$',
+]

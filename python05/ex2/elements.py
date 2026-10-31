@@ -1,7 +1,6 @@
+def create_fire() -> str:
+    return "Fire element created"
 
 
-def main() -> None:
-
-
-if __name__ == "__main__":
-    main()
+def create_water() -> str:
+    return "Water element created"

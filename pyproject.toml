@@ -18,5 +18,5 @@ build-backend = "poetry.core.masonry.api"
 exclude = [
     'test\.py$',
     '^python02/ex2/ft_different_errors\.py$',
-    '^python05/ex2/ft_alembic_1\.py$',
+    '^python05/ft_alembic_1\.py$',
 ]

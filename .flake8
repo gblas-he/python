@@ -5,3 +5,4 @@ exclude =
 	env,
 	venv,
 	.env,
+	test.py,

@@ -15,7 +15,7 @@ class Plant:
 
     def show(self):
         self._stats._show += 1
-        return f"{self.name}: {round(self._height,1)}cm, {self._age} days old"
+        return f"{self.name}: {round(self._height, 1)}cm, {self._age} days old"
 
     def get_stats(self):
         return self._stats.display()

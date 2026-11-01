@@ -1,8 +1,4 @@
 [flake8]
-exclude =
+extend-exclude =
     .venv,
-	lab_env,
-	env,
-	venv,
-	.env,
-	test.py,
+	test_scratch.py,
